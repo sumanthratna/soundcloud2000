@@ -3,3 +3,4 @@
 *.log
 Gemfile.lock
 pkg/
+*.gem
