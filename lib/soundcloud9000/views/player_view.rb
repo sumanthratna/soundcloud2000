@@ -1,5 +1,6 @@
 require_relative '../time_helper'
 require_relative '../ui/view'
+require_relative '../models/track_collection'
 
 module Soundcloud9000
   module Views
@@ -22,6 +23,7 @@ module Soundcloud9000
 
       def draw
         line progress + download_progress
+        # p @tracks
         with_color(:green) do
           line((duration + ' - ' + status).ljust(16) + @player.title)
         end
@@ -30,7 +32,7 @@ module Soundcloud9000
       end
 
       def status
-        @player.playing? ? 'playing' : 'paused'
+        (@player.playing? ? 'playing' : 'paused') # + ' ' + (@tracks.shuffle? ? '(shuffle)' : '')
       end
 
       def progress

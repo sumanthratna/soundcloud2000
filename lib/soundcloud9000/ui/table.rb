@@ -57,6 +57,13 @@ module Soundcloud9000
         end
       end
 
+      def random
+        @current = rand(length)
+        @top -= 1 if @current < @top
+        @top += 1 if @current > body_height
+        render
+      end
+
       def select
         @selected = @current
         render

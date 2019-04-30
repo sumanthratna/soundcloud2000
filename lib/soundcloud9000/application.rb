@@ -27,15 +27,15 @@ module Soundcloud9000
         Splash.new(
           UI::Rect.new(0, 0, Curses.cols, Curses.lines)))
 
-      @player_controller = PlayerController.new(
-        PlayerView.new(
-          UI::Rect.new(0, 0, Curses.cols, 5)), client)
-
       @track_controller = TrackController.new(
         TracksTable.new(
           UI::Rect.new(0, 5, Curses.cols, Curses.lines - 5)), client)
 
       @track_controller.bind_to(TrackCollection.new(client))
+
+      @player_controller = PlayerController.new(
+        PlayerView.new(
+          UI::Rect.new(0, 0, Curses.cols, 5)), client)
 
       @track_controller.events.on(:select) do |track|
         @player_controller.play(track)
@@ -73,7 +73,7 @@ module Soundcloud9000
       case key
       when :left, :right, :space, :one, :two, :three, :four, :five, :six, :seven, :eight, :nine
         @player_controller.events.trigger(:key, key)
-      when :down, :up, :enter, :u, :f, :s, :j, :k
+      when :down, :up, :enter, :u, :f, :s, :j, :k, :m
         @track_controller.events.trigger(:key, key)
       end
     end

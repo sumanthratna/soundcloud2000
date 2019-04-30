@@ -10,12 +10,13 @@ module Soundcloud9000
       DEFAULT_LIMIT = 50
 
       attr_reader :limit
-      attr_accessor :collection_to_load, :user, :playlist
+      attr_accessor :collection_to_load, :user, :playlist, :shuffle
 
       def initialize(client)
         super
         @limit = DEFAULT_LIMIT
         @collection_to_load = :recent
+        @shuffle = false
       end
 
       def size

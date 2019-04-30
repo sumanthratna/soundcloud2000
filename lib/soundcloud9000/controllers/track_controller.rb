@@ -52,6 +52,10 @@ module Soundcloud9000
                 @tracks.clear_and_replace
               end
             end
+          # when :im grown up, im gonna go to brown and be smarter than u, sumanth <333 (Rahel Selemon, April 29, 2019)
+          when :m
+            @tracks.shuffle = !@tracks.shuffle
+            UI::Input.message("Shuffle #{if @tracks.shuffle then "enabled" else "disabled" end}.")
           end
         end
       end
@@ -81,7 +85,11 @@ module Soundcloud9000
       end
 
       def next_track
-        @view.down
+        if @tracks.shuffle
+          @view.random
+        else
+          @view.down
+        end
         @view.select
         events.trigger(:select, current_track)
       end

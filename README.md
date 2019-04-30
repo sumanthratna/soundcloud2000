@@ -64,12 +64,12 @@ SC_CLIENT_ID=YOUR_CLIENT_ID soundcloud9000
 - play favorites from a user (`f`)
 - play sets/playlists from a user (`s`)
 - level meter
+- shuffle (`m`)
 
 ## Planned
 
 - play any streams, sets or sounds
 - better browsing between users and sound lists
-- shuffle
 - live lyrics (don't get your hopes up for this one)
 
 ## Authors

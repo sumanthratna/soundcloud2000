@@ -26,7 +26,8 @@ module Soundcloud9000
         '7'                => :seven,
         '8'                => :eight,
         '9'                => :nine,
-        'f'                => :f
+        'f'                => :f,
+        'm'                => :m
       }
 
       def self.get(delay = 0)
@@ -44,6 +45,12 @@ module Soundcloud9000
         Curses.setpos(Curses.lines - 1, 0)
         Curses.addstr(''.ljust(Curses.cols))
         result
+      end
+
+      def self.message(output)
+        Curses.setpos(Curses.lines - 1, 0)
+        Curses.clrtoeol
+        Curses.addstr(output)
       end
 
       def self.error(output)
