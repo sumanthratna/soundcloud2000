@@ -55,7 +55,7 @@ module Soundcloud9000
           # when :im grown up, im gonna go to brown and be smarter than u, sumanth <333 (Rahel Selemon, April 29, 2019)
           when :m
             @tracks.shuffle = !@tracks.shuffle
-            UI::Input.message("Shuffle #{if @tracks.shuffle then "enabled" else "disabled" end}.")
+            UI::Input.message("Shuffle #{@tracks.shuffle ? 'enabled' : 'disabled'}.")
           end
         end
       end

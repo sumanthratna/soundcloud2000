@@ -1,6 +1,8 @@
 # soundcloud9000
 
-The next generation SoundCloud client. Without all these stupid CSS files. Runs on OSX and Linux.
+[![Gem Version](https://badge.fury.io/rb/soundcloud9000.svg)](https://badge.fury.io/rb/soundcloud9000)
+
+The next generation SoundCloud client. Without all these stupid CSS files. Runs on macOS and Linux.
 
 ![Screen Shot 2019-04-28 at 20 42 40](https://user-images.githubusercontent.com/31281983/56872460-74dd2780-69f7-11e9-9d7e-247757a9a6fd.png)
 
@@ -8,18 +10,25 @@ The next generation SoundCloud client. Without all these stupid CSS files. Runs 
 
 This hack was originally built at the [Music Hack Day Stockholm 2013](http://stockholm.musichackday.org/2013).
 
+## What's the Difference?
+
+The original software, soundcloud2000, is no longer maintained, and so I've picked it back up so I can add new features.
+
 ## Requirements
 
-- Ruby (1.9)
-- Portaudio (19)
-- Mpg123 (1.14)
+-   Ruby (1.9)
+-   Portaudio (19)
+-   Mpg123 (1.14)
+
+## Legal
+
+See [this comment](https://github.com/grobie/soundcloud2000/issues/93#issuecomment-233182516).
 
 ## Installation
 
-Assuming you have Ruby/Rubygems installed, you need portaudio and mpg123 as
-library to compile the native extensions.
+Assuming you have Ruby/RubyGems installed, you need portaudio and mpg123 installed as libraries to compile the native extensions.
 
-### OSX
+### macOS
 
 ```bash
 xcode-select --install
@@ -56,32 +65,35 @@ SC_CLIENT_ID=YOUR_CLIENT_ID soundcloud9000
 
 ## Features
 
-- stream SoundCloud tracks in your terminal (`enter`)
-- scroll through sound lists (`down` / `up`)
-- play / pause support (`space`)
-- forward / rewind support (`right` / `left`)
-- play tracks of different users (`u`)
-- play favorites from a user (`f`)
-- play sets/playlists from a user (`s`)
-- level meter
-- shuffle (`m`)
+-   stream SoundCloud tracks in your terminal (`enter`)
+-   scroll through sound lists (`down` / `up`)
+-   play / pause support (`space`)
+-   forward / rewind support (`right` / `left`)
+-   play tracks of different users (`u`)
+-   play favorites from a user (`f`)
+-   play sets/playlists from a user (`s`)
+-   level meter
+-   play songs in random order (`m`)
+-   no advertisements
+-   favoriting tracks
 
 ## Planned
 
-- play any streams, sets or sounds
-- better browsing between users and sound lists
-- live lyrics (don't get your hopes up for this one)
+-   custom configuration file
+-   play any streams, sets or sounds
+-   better browsing between users and sound lists
+-   live lyrics (don't get your hopes up for this one)
 
 ## Authors
 
-- [Matthias Georgi](https://github.com/georgi) ([@mgeorgi](https://twitter.com/mgeorgi))
-- [Tobias Schmidt](https://github.com/grobie) ([@dagrobie](https://twitter.com/dagrobie))
+-   [Matthias Georgi](https://github.com/georgi) ([@mgeorgi](https://twitter.com/mgeorgi))
+-   [Tobias Schmidt](https://github.com/grobie) ([@dagrobie](https://twitter.com/dagrobie))
 
 ## Contributors
 
-- [Travis Thieman](https://github.com/tthieman) ([@tthieman](https://twitter.com/thieman))
-- [Sean Lewis](https://github.com/sophisticasean) ([@FricSean](https://twitter.com/fricsean))
+-   [Travis Thieman](https://github.com/tthieman) ([@tthieman](https://twitter.com/thieman))
+-   [Sean Lewis](https://github.com/sophisticasean) ([@FricSean](https://twitter.com/fricsean))
 
 ## Current Maintainer
 
-- [Sumanth Ratna](https://github.com/sumanthratna) ([@sumanthratna](https://twitter.com/sumanthratna))
+-   [Sumanth Ratna](https://github.com/sumanthratna) ([@sumanthratna](https://twitter.com/sumanthratna))

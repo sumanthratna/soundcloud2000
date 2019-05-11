@@ -45,7 +45,7 @@ module Soundcloud9000
       end
 
       def comments
-        @hash['comments']
+        @hash['comment_count']
       end
 
       def stream_url

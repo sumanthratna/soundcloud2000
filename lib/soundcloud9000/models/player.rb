@@ -57,7 +57,11 @@ module Soundcloud9000
         @file = "#{@folder}/#{track.id}.mp3"
 
         if !File.exist?(@file) || track.duration / 1000 > length_in_seconds * 0.95
-          File.unlink(@file) rescue nil
+          begin
+            File.unlink(@file)
+          rescue StandardError
+            nil
+          end
           @download = DownloadThread.new(location, @file)
         else
           @download = nil
@@ -93,7 +97,7 @@ module Soundcloud9000
           @seek_speed[direction] = 1
         end
 
-        @seek_time[direction] =  Time.now
+        @seek_time[direction] = Time.now
         @seek_speed[direction]
       end
 

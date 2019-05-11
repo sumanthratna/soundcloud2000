@@ -12,7 +12,7 @@ module Soundcloud9000
       parts = [
         milliseconds / 1000 / 60 / 60,      # hours
         milliseconds / 1000 / 60 % 60,      # minutes
-        milliseconds / 1000 % 60,           # seconds
+        milliseconds / 1000 % 60            # seconds
       ]
 
       parts.shift if parts.first.zero?

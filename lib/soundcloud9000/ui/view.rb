@@ -6,14 +6,15 @@ module Soundcloud9000
   module UI
     # class responsible for helping keep our app tidy and populated
     class View
-      ROW_SEPARATOR = ?|
-      LINE_SEPARATOR = ?-
-      INTERSECTION = ?+
+      ROW_SEPARATOR = '|'.freeze
+      LINE_SEPARATOR = '-'.freeze
+      INTERSECTION = '+'.freeze
 
       attr_reader :rect
 
       def initialize(rect)
         @rect = rect
+        # use Pad instead of Window?
         @window = Curses::Window.new(rect.height, rect.width, rect.y, rect.x)
         @line = 0
         @padding = 0
@@ -62,11 +63,10 @@ module Soundcloud9000
         @window.refresh
       end
 
-      def perform_layout
-      end
+      def perform_layout; end
 
       def draw
-        fail NotImplementedError
+        raise NotImplementedError
       end
     end
   end

@@ -45,6 +45,7 @@ module Soundcloud9000
 
       def favorites_tracks
         return [] if @client.current_user.nil?
+
         @client.get(@client.current_user.uri + '/favorites', offset: @limit * @page, limit: @limit)
       end
 
@@ -54,6 +55,7 @@ module Soundcloud9000
 
       def user_tracks
         return [] if @client.current_user.nil?
+
         user_tracks = @client.get(@client.current_user.uri + '/tracks', offset: @limit * @page, limit: @limit)
         if user_tracks.empty?
           UI::Input.error("'#{@client.current_user.username}' has not authored any tracks. Use f to switch to their favorites, or s to switch to their playlists.")
@@ -65,6 +67,7 @@ module Soundcloud9000
 
       def playlist_tracks
         return [] if @playlist.nil?
+
         @client.get(@playlist.uri + '/tracks', offset: @limit * @page, limit: @limit)
       end
     end

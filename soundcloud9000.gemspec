@@ -2,10 +2,16 @@ $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
   s.name          = "soundcloud9000"
-  s.version       = "0.1.1"
+  s.version       = "0.1.2"
   s.authors       = ["Tobias Schmidt", "Matthias Georgi", "Sumanth Ratna"]
   s.email         = "sratna@sumanthratna.gq"
   s.homepage      = "http://www.github.com/sumanthratna/soundcloud9000"
+  s.metadata      = {
+    "source_code_uri" => "http://www.github.com/sumanthratna/soundcloud9000",
+    "bug_tracker_uri" => "http://www.github.com/sumanthratna/soundcloud9000/issues"
+  }
+  s.requirements  << "PortAudio"
+  s.requirements  << "mpg123"
   s.summary       = "SoundCloud without the stupid CSS files"
   s.description   = "The next generation SoundCloud client"
   s.license       = 'MIT'

@@ -6,29 +6,29 @@ module Soundcloud9000
     class Color
       PAIRS = {
         white: 0,
-        red:   1,
-        blue:  2,
+        red: 1,
+        blue: 2,
         green: 3,
-        cyan:  4
-      }
+        cyan: 4
+      }.freeze
 
       DEFINITION = {
         PAIRS[:white] => [Curses::COLOR_WHITE, Curses::COLOR_BLACK],
-        PAIRS[:red]   => [Curses::COLOR_RED,   Curses::COLOR_BLACK],
-        PAIRS[:blue]  => [Curses::COLOR_BLUE,  Curses::COLOR_WHITE],
+        PAIRS[:red] => [Curses::COLOR_RED, Curses::COLOR_BLACK],
+        PAIRS[:blue] => [Curses::COLOR_BLUE, Curses::COLOR_WHITE],
         PAIRS[:green] => [Curses::COLOR_GREEN, Curses::COLOR_BLACK],
-        PAIRS[:cyan]  => [Curses::COLOR_BLACK, Curses::COLOR_CYAN]
-      }
+        PAIRS[:cyan] => [Curses::COLOR_BLACK, Curses::COLOR_CYAN]
+      }.freeze
 
       COLORS = {
         white: Curses.color_pair(PAIRS[:white]),
         black: Curses.color_pair(PAIRS[:white]) | Curses::A_REVERSE,
-        red:   Curses.color_pair(PAIRS[:red]),
-        blue:  Curses.color_pair(PAIRS[:blue]),
+        red: Curses.color_pair(PAIRS[:red]),
+        blue: Curses.color_pair(PAIRS[:blue]),
         green: Curses.color_pair(PAIRS[:green]),
         green_reverse: Curses.color_pair(PAIRS[:green]) | Curses::A_REVERSE,
-        cyan:  Curses.color_pair(PAIRS[:cyan])
-      }
+        cyan: Curses.color_pair(PAIRS[:cyan])
+      }.freeze
 
       def self.init
         Curses.start_color

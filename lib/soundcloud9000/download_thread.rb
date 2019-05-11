@@ -8,7 +8,7 @@ module Soundcloud9000
     def initialize(url, filename)
       @events = Events.new
       @url = URI.parse(url)
-      @file = File.open(filename, "w")
+      @file = File.open(filename, 'w')
       @progress = 0
       start!
     end
@@ -37,7 +37,7 @@ module Soundcloud9000
               @file.close if @progress == @total
             end
           end
-        rescue => e
+        rescue StandardError => e
           log e.message
         end
       end

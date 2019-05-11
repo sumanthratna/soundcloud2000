@@ -25,17 +25,23 @@ module Soundcloud9000
 
       @splash_controller = Controller.new(
         Splash.new(
-          UI::Rect.new(0, 0, Curses.cols, Curses.lines)))
+          UI::Rect.new(0, 0, Curses.cols, Curses.lines)
+        )
+      )
 
       @track_controller = TrackController.new(
         TracksTable.new(
-          UI::Rect.new(0, 5, Curses.cols, Curses.lines - 5)), client)
+          UI::Rect.new(0, 5, Curses.cols, Curses.lines - 5)
+        ), client
+      )
 
       @track_controller.bind_to(TrackCollection.new(client))
 
       @player_controller = PlayerController.new(
         PlayerView.new(
-          UI::Rect.new(0, 0, Curses.cols, 5)), client)
+          UI::Rect.new(0, 0, Curses.cols, 5)
+        ), client
+      )
 
       @track_controller.events.on(:select) do |track|
         @player_controller.play(track)

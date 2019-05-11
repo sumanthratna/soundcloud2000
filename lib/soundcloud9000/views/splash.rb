@@ -33,7 +33,7 @@ module Soundcloud9000
 
           Originally Developed by Matthias Georgi and Tobias Schmidt
                     Currently Maintained by Sumanth Ratna
-}
+}.freeze
 
       protected
 

@@ -2,7 +2,7 @@ require_relative '../events'
 
 module Soundcloud9000
   module Controllers
-    # Control our view, events, and rendering.
+    # control our view, events, and rendering
     class Controller
       attr_reader :events
 

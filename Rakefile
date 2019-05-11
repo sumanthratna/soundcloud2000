@@ -3,19 +3,35 @@ require 'rake'
 require 'yaml'
 
 def dependencies(file)
-  `otool -L #{file}`.split("\n")[1..-1].map {|line| line.split[0] }
+  `otool -L #{file}`.split("\n")[1..-1].map { |line| line.split[0] }
 end
 
 task :dirs do
-  Dir.mkdir 'vendor' rescue nil
-  Dir.mkdir 'vendor/bin' rescue nil
-  Dir.mkdir 'vendor/lib' rescue nil
-  Dir.mkdir 'vendor/dyld' rescue nil
+  begin
+    Dir.mkdir 'vendor'
+  rescue StandardError
+    nil
+  end
+  begin
+    Dir.mkdir 'vendor/bin'
+  rescue StandardError
+    nil
+  end
+  begin
+    Dir.mkdir 'vendor/lib'
+  rescue StandardError
+    nil
+  end
+  begin
+    Dir.mkdir 'vendor/dyld'
+  rescue StandardError
+    nil
+  end
 end
 
-task :ruby => :dirs do
+task ruby: :dirs do
   lines = `rvm info`.split("\n")[6..-1]
-  ruby = YAML.load(lines.join("\n"))
+  ruby = YAML.safe_load(lines.join("\n"))
 
   version = ruby.keys.first
   home = ruby[version]['homes']['ruby']
@@ -27,8 +43,8 @@ task :ruby => :dirs do
   # `cp #{dylib} vendor/dyld`
 end
 
-task :libs => :dirs do
-  [:audite, :portaudio, :mpg123].each do |name|
+task libs: :dirs do
+  %i[audite portaudio mpg123].each do |name|
     lib = `gem which #{name}`.chomp
     `cp #{lib} vendor/lib`
     if File.extname(lib) == '.bundle'
@@ -38,7 +54,7 @@ task :libs => :dirs do
   end
 end
 
-task :package => [:ruby, :libs] do
+task package: %i[ruby libs] do
   `cp soundcloud9000 vendor`
   `cp -a bin/* vendor/bin`
   `cp -a lib/* vendor/lib`

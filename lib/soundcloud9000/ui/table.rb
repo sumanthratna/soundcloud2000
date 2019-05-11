@@ -4,7 +4,7 @@ module Soundcloud9000
   module UI
     # responsible for drawing our table of tracks
     class Table < View
-      SEPARATOR = '  |  '
+      SEPARATOR = '  |  '.freeze
 
       attr_reader :current, :collection
       attr_accessor :header, :keys
@@ -22,7 +22,7 @@ module Soundcloud9000
       end
 
       def bind_to(collection)
-        fail ArgumentError if @collection
+        raise ArgumentError if @collection
 
         @collection = collection
         @collection.events.on(:append) { render }
@@ -91,7 +91,8 @@ module Soundcloud9000
         @sizes = []
         (rows + [header]).each do |row|
           row.each_with_index do |value, index|
-            current, max = value.to_s.length, @sizes[index] || 0
+            current = value.to_s.length
+            max = @sizes[index] || 0
             @sizes[index] = current if max < current
           end
         end
