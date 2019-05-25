@@ -56,6 +56,51 @@ module Soundcloud9000
           when :m
             @tracks.shuffle = !@tracks.shuffle
             UI::Input.message("Shuffle #{@tracks.shuffle ? 'enabled' : 'disabled'}.")
+          when :h
+            @tracks.help = !@tracks.help
+            if @tracks.help
+              height = 40
+              width  = 80
+              top    = (Curses.lines - height) / 2
+              left   = (Curses.cols - width) / 2
+              win    = Curses::Window.new(height, width, top, left)
+              win.attrset(Curses.color_pair(4) | Curses::A_REVERSE | Curses::A_BOLD)
+              win.setpos(2, 3)
+              help = Application.get_help
+              win.addstr(help)
+              win.setpos(help.lines.count, 0)
+              win.addstr('-' * width)
+              win.setpos(help.lines.count + 1, 3)
+              shortcuts = %(
+            Shortcuts:
+            [enter]           play selected track from beginning
+            [down]/j          select track below currently selected track
+            [up]/k            select track above currently selected track
+            [space]           play or pause the current track
+            [right]/[left]    move backward or forward in current track
+            1                 jump to the time at 1/10 of the current track
+            2                 jump to the time at 2/10 of the current track
+            3                 jump to the time at 3/10 of the current track
+            4                 jump to the time at 4/10 of the current track
+            5                 jump to the time at 5/10 of the current track
+            6                 jump to the time at 6/10 of the current track
+            7                 jump to the time at 7/10 of the current track
+            8                 jump to the time at 8/10 of the current track
+            9                 jump to the time at 9/10 of the current track
+            u                 play tracks of different users
+            f                 play favorites from a user
+            s                 play sets/playlists from a user
+            m                 play songs in random order
+            h                 toggle this help screen
+              )
+              win.addstr(shortcuts)
+              win.box('|', '-')
+              win.refresh
+              win.getch
+              win.close
+            else
+              @tracks.clear_and_replace
+            end
           end
         end
       end

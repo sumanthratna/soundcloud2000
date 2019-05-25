@@ -1,10 +1,12 @@
 require_relative 'user'
+require_relative '../application'
 
 module Soundcloud9000
   module Models
     # stores information for each track that hits the player
     class Track
       def initialize(hash)
+        Application.logger.debug(hash)
         @hash = hash
       end
 

@@ -79,7 +79,7 @@ module Soundcloud9000
       case key
       when :left, :right, :space, :one, :two, :three, :four, :five, :six, :seven, :eight, :nine
         @player_controller.events.trigger(:key, key)
-      when :down, :up, :enter, :u, :f, :s, :j, :k, :m
+      when :down, :up, :enter, :u, :f, :s, :j, :k, :m, :h
         @track_controller.events.trigger(:key, key)
       end
     end
@@ -94,6 +94,23 @@ module Soundcloud9000
 
     def self.logger
       @logger ||= Logger.new('debug.log')
+    end
+
+    def self.get_version
+      "soundcloud9000, version #{Gem.latest_spec_for('soundcloud9000').version}"
+    end
+
+    def self.get_help
+      %(
+      #{get_version}
+      Usage:  soundcloud9000
+              soundcloud9000 -h | --help
+              soundcloud9000 -v | --version
+
+      Options:
+      -h --help       show this message, then exit
+      -v --version    show soundcloud9000 version, then exit
+    )
     end
   end
 end

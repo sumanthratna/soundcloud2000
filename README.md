@@ -75,11 +75,13 @@ SC_CLIENT_ID=YOUR_CLIENT_ID soundcloud9000
 -   level meter
 -   play songs in random order (`m`)
 -   no advertisements
--   favoriting tracks
+-   live help (`h`)
 
 ## Planned
 
 -   custom configuration file
+-   sorting tracks
+-   favoriting tracks
 -   play any streams, sets or sounds
 -   better browsing between users and sound lists
 -   live lyrics (don't get your hopes up for this one)

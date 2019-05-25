@@ -23,7 +23,6 @@ module Soundcloud9000
 
       def draw
         line progress + download_progress
-        # p @tracks
         with_color(:green) do
           line((duration + ' - ' + status).ljust(16) + @player.title)
         end
@@ -32,7 +31,7 @@ module Soundcloud9000
       end
 
       def status
-        (@player.playing? ? 'playing' : 'paused') # + ' ' + (@tracks.shuffle? ? '(shuffle)' : '')
+        (@player.playing? ? 'playing' : 'paused')
       end
 
       def progress

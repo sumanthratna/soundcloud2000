@@ -27,7 +27,8 @@ module Soundcloud9000
         '8' => :eight,
         '9' => :nine,
         'f' => :f,
-        'm' => :m
+        'm' => :m,
+        'h' => :h
       }.freeze
 
       def self.get(delay = 0)
