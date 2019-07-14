@@ -28,7 +28,8 @@ module Soundcloud9000
         '9' => :nine,
         'f' => :f,
         'm' => :m,
-        'h' => :h
+        'h' => :h,
+        'o' => :o
       }.freeze
 
       def self.get(delay = 0)
@@ -58,6 +59,10 @@ module Soundcloud9000
         Curses.setpos(Curses.lines - 1, 0)
         Curses.clrtoeol
         Curses.attron(Color.get(:red)) { Curses.addstr(output) }
+      end
+
+      def self.menu(_options)
+        p 'menu????'
       end
     end
   end

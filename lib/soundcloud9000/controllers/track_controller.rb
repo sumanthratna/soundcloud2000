@@ -72,26 +72,27 @@ module Soundcloud9000
               win.addstr('-' * width)
               win.setpos(help.lines.count + 1, 3)
               shortcuts = %(
-            Shortcuts:
-            [enter]           play selected track from beginning
-            [down]/j          select track below currently selected track
-            [up]/k            select track above currently selected track
-            [space]           play or pause the current track
-            [right]/[left]    move backward or forward in current track
-            1                 jump to the time at 1/10 of the current track
-            2                 jump to the time at 2/10 of the current track
-            3                 jump to the time at 3/10 of the current track
-            4                 jump to the time at 4/10 of the current track
-            5                 jump to the time at 5/10 of the current track
-            6                 jump to the time at 6/10 of the current track
-            7                 jump to the time at 7/10 of the current track
-            8                 jump to the time at 8/10 of the current track
-            9                 jump to the time at 9/10 of the current track
-            u                 play tracks of different users
-            f                 play favorites from a user
-            s                 play sets/playlists from a user
-            m                 play songs in random order
-            h                 toggle this help screen
+      Shortcuts:
+      [enter]/[ctrl-J]    play selected track from beginning
+      [down]/j            select track below currently selected track
+      [up]/k              select track above currently selected track
+      [space]             play or pause the current track
+      [right]/[left]      move backward or forward in current track
+      1                   jump to the time at 1/10 of the current track
+      2                   jump to the time at 2/10 of the current track
+      3                   jump to the time at 3/10 of the current track
+      4                   jump to the time at 4/10 of the current track
+      5                   jump to the time at 5/10 of the current track
+      6                   jump to the time at 6/10 of the current track
+      7                   jump to the time at 7/10 of the current track
+      8                   jump to the time at 8/10 of the current track
+      9                   jump to the time at 9/10 of the current track
+      u                   play tracks of different users
+      f                   play favorites from a user
+      s                   play sets/playlists from a user
+      m                   play songs in random order
+      h                   toggle this help screen
+      o                   change order of tracks
               )
               win.addstr(shortcuts)
               win.box('|', '-')
@@ -101,6 +102,8 @@ module Soundcloud9000
             else
               @tracks.clear_and_replace
             end
+          when :o
+            p 'order'
           end
         end
       end

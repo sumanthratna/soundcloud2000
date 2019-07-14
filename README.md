@@ -6,7 +6,7 @@ The next generation SoundCloud client. Without all these stupid CSS files. Runs 
 
 ![Screen Shot 2019-04-28 at 20 42 40](https://user-images.githubusercontent.com/31281983/56872460-74dd2780-69f7-11e9-9d7e-247757a9a6fd.png)
 
-![Screen Shot 2013-01-20 at 15 37 54](https://f.cloud.github.com/assets/3432/81281/06b05df4-630f-11e2-8b55-7f3c18126831.png)
+![Screen Shot 2019-05-26 at 13 37 32](https://user-images.githubusercontent.com/31281983/58385263-8811f180-7fbb-11e9-98db-22d5578ce655.png)
 
 This hack was originally built at the [Music Hack Day Stockholm 2013](http://stockholm.musichackday.org/2013).
 
@@ -26,7 +26,7 @@ See [this comment](https://github.com/grobie/soundcloud2000/issues/93#issuecomme
 
 ## Installation
 
-Assuming you have Ruby/RubyGems installed, you need portaudio and mpg123 installed as libraries to compile the native extensions.
+Assuming you have Ruby/RubyGems installed, you need `portaudio` and `mpg123` installed as libraries to compile the native extensions.
 
 ### macOS
 

@@ -79,7 +79,7 @@ module Soundcloud9000
       case key
       when :left, :right, :space, :one, :two, :three, :four, :five, :six, :seven, :eight, :nine
         @player_controller.events.trigger(:key, key)
-      when :down, :up, :enter, :u, :f, :s, :j, :k, :m, :h
+      when :down, :up, :enter, :u, :f, :s, :j, :k, :m, :h, :o
         @track_controller.events.trigger(:key, key)
       end
     end

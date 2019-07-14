@@ -38,10 +38,6 @@ module Soundcloud9000
         TimeHelper.duration(duration)
       end
 
-      def plays
-        @hash['playback_count']
-      end
-
       def likes
         @hash['favoritings_count']
       end

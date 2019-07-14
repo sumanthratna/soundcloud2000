@@ -6,8 +6,8 @@ module Soundcloud9000
     class TracksTable < UI::Table
       def initialize(*args)
         super
-        self.header = %w[Title User Length Plays Likes Comments]
-        self.keys   = %i[title username length plays likes comments]
+        self.header = %w[Title User Length Likes Comments]
+        self.keys   = %i[title username length likes comments]
       end
     end
   end

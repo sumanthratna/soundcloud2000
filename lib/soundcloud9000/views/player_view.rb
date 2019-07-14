@@ -53,7 +53,7 @@ module Soundcloud9000
       end
 
       def track_info
-        "#{track.plays} Plays | #{track.likes} Likes | #{track.comments} Comments | #{track.url}"
+        "#{track.likes} Likes | #{track.comments} Comments | #{track.url}"
       end
 
       def duration
