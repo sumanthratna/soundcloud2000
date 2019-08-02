@@ -6,7 +6,8 @@ The next generation SoundCloud client. Without all these stupid CSS files. Runs 
 
 ![Screen Shot 2019-04-28 at 20 42 40](https://user-images.githubusercontent.com/31281983/56872460-74dd2780-69f7-11e9-9d7e-247757a9a6fd.png)
 
-![Screen Shot 2019-05-26 at 13 37 32](https://user-images.githubusercontent.com/31281983/58385263-8811f180-7fbb-11e9-98db-22d5578ce655.png)
+![Screen Shot 2019-08-02 at 12 31 53](https://user-images.githubusercontent.com/31281983/62384887-8ddb0480-b521-11e9-8e12-dba14b103c38.png)
+
 
 This hack was originally built at the [Music Hack Day Stockholm 2013](http://stockholm.musichackday.org/2013).
 
