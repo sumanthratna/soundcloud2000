@@ -1,5 +1,6 @@
 # soundcloud9000
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f210e411578d42e0bff7ebbef3f3ef3c)](https://app.codacy.com/app/sumanthratna/soundcloud9000?utm_source=github.com&utm_medium=referral&utm_content=sumanthratna/soundcloud9000&utm_campaign=Badge_Grade_Dashboard)
 [![Gem Version](https://badge.fury.io/rb/soundcloud9000.svg)](https://badge.fury.io/rb/soundcloud9000)
 
 The next generation SoundCloud client. Without all these stupid CSS files. Runs on macOS and Linux.
@@ -8,10 +9,9 @@ The next generation SoundCloud client. Without all these stupid CSS files. Runs 
 
 ![Screen Shot 2019-08-02 at 12 31 53](https://user-images.githubusercontent.com/31281983/62384887-8ddb0480-b521-11e9-8e12-dba14b103c38.png)
 
-
 This hack was originally built at the [Music Hack Day Stockholm 2013](http://stockholm.musichackday.org/2013).
 
-## What's the Difference?
+## The Difference Between `soundcloud2000` and `soundcloud9000`
 
 The original software, soundcloud2000, is no longer maintained, and so I've picked it back up so I can add new features.
 
