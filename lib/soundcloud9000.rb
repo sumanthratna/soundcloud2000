@@ -8,15 +8,18 @@ module Soundcloud9000
       exit 1
     end
 
-    if ARGV.include?('-v') || ARGV.include?('--version')
-      puts Application.get_version
-      puts "Copyright (C) #{Time.new.year} Sumanth Ratna"
-      exit 0
-    end
-
-    if ARGV.include?('-h') || ARGV.include?('--help')
-      puts Application.get_help
-      exit 0
+    if !ARGV.empty?
+      if ARGV.include?('-v') || ARGV.include?('--version')
+        puts Application.get_version
+        puts "Copyright (C) #{Time.new.year} Sumanth Ratna"
+        exit 0
+      elseif ARGV.include?('-h') || ARGV.include?('--help')
+        puts Application.get_help
+        exit 0
+      else
+        puts "Unknown option: #{ARGV[0]}"
+        exit 1
+      end
     end
 
     client = Client.new(client_id)
