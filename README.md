@@ -1,5 +1,6 @@
 # soundcloud9000
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f210e411578d42e0bff7ebbef3f3ef3c)](https://app.codacy.com/app/sumanthratna/soundcloud9000?utm_source=github.com&utm_medium=referral&utm_content=sumanthratna/soundcloud9000&utm_campaign=Badge_Grade_Dashboard)
 [![Gem Version](https://badge.fury.io/rb/soundcloud9000.svg)](https://badge.fury.io/rb/soundcloud9000)
 
 The next generation SoundCloud client. Without all these stupid CSS files. Runs on macOS and Linux.
