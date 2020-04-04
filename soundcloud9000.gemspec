@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.name          = "soundcloud9000"
   s.version       = "0.1.3"
   s.authors       = ["Tobias Schmidt", "Matthias Georgi", "Sumanth Ratna"]
-  s.email         = "sratna@sumanthratna.gq"
+  s.email         = "sratna@sumanthratna.ml"
   s.homepage      = "http://www.github.com/sumanthratna/soundcloud9000"
   s.metadata      = {
     "source_code_uri" => "http://www.github.com/sumanthratna/soundcloud9000",
