@@ -1,0 +1,28 @@
+PATH
+  remote: .
+  specs:
+    soundcloud9000 (0.1.3)
+      audite (~> 0.4)
+      curses (~> 1.0)
+      json (~> 1.8)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    audite (0.4.0)
+    curses (1.3.2)
+    json (1.8.6)
+    mocha (1.11.2)
+    rake (10.5.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 1.17.1)
+  mocha (~> 1.1)
+  rake (~> 10.5)
+  soundcloud9000!
+
+BUNDLED WITH
+   1.17.1

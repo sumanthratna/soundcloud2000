@@ -2,6 +2,7 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/f210e411578d42e0bff7ebbef3f3ef3c)](https://app.codacy.com/app/sumanthratna/soundcloud9000?utm_source=github.com&utm_medium=referral&utm_content=sumanthratna/soundcloud9000&utm_campaign=Badge_Grade_Dashboard)
 [![Gem Version](https://badge.fury.io/rb/soundcloud9000.svg)](https://badge.fury.io/rb/soundcloud9000)
+[![Build Status](https://travis-ci.com/sumanthratna/soundcloud9000.svg?branch=master)](https://travis-ci.com/sumanthratna/soundcloud9000)
 
 The next generation SoundCloud client. Without all these stupid CSS files. Runs on macOS and Linux.
 
@@ -24,6 +25,8 @@ The original software, soundcloud2000, is no longer maintained, and so I've pick
 ## Legal
 
 See [this comment](https://github.com/grobie/soundcloud2000/issues/93#issuecomment-233182516).
+
+> \[The] stream needs to be downloaded, which is already against the ToS of SoundCloud. So just by using \[this], you are breaking the law.
 
 ## Installation
 
@@ -80,11 +83,8 @@ SC_CLIENT_ID=YOUR_CLIENT_ID soundcloud9000
 
 ## Planned
 
--   custom configuration file
 -   sorting tracks
--   favoriting tracks
--   play any streams, sets or sounds
--   better browsing between users and sound lists
+-   custom configuration file
 -   live lyrics (don't get your hopes up for this one)
 
 ## Authors
