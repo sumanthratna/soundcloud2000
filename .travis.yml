@@ -4,7 +4,7 @@ rvm:
   # - ruby-2.6.6
   # - ruby-2.5.8
   # - ruby-2.4.10
-  - ruby-2.3.0
+  - ruby-2.3.8
   # - ruby-2.2.10
   # - ruby-2.1.10
   # - ruby-1.9.3-p551
@@ -26,6 +26,7 @@ install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then gem install soundcloud9000; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then yes y | gem uninstall audite --force; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then gem install --user audite -- --with-ldflags="-lmpg123"; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then rvm get head; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install portaudio19-dev libmpg123-dev libncurses-dev ruby-dev; fi
   - gem install bundler:1.17.1
 script:
