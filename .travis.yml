@@ -10,8 +10,8 @@ jobs:
         - gem install soundcloud9000
         - yes y | gem uninstall audite --force
         - gem install --user audite -- --with-ldflags="-lmpg123"
-        - rvm get head
         - rvm use ruby-2.5.1 --install --binary --fuzzy
+        - rvm get head
     - os: linux
       dist: bionic
       before_install:
