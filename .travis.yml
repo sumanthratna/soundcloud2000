@@ -14,6 +14,9 @@ jobs:
     - os: linux
       dist: bionic
       before_install:
+        - sudo apt-get purge ruby
+        - sudo apt-get autoremove
+        - sudo apt-get install software-properties-common && yes y | sudo apt-add-repository ppa:brightbox/ruby-ng && sudo apt-get update
         - sudo apt-get install portaudio19-dev libmpg123-dev libncurses-dev ruby2.6-dev
     - os: linux
       dist: xenial  # ruby-dev on xenial is 2.3
