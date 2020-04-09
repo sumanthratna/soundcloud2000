@@ -18,9 +18,7 @@ jobs:
       dist: bionic
 env:
   global:
-    secure: VchDDae2eYvQnsDXVDYb0V//LTxigkFsiLEGSw7meyfqS14T12k4q0b9rtCRaldjsUHs9L/vfv2qdu+ysafe3XvfL76ny7aYuupR4isFxHGADVvfaiiZCPUbaUsMQ92UzuopD5mpB5irnOWiNkq2xoyvG4wp27VKDKt1rbg2KjYz6OYG0/muk/VbJnxIW0IpMwaOJ63JlNGzuvf7rpkEmDlHHty1tnS4b5XCYQ2TjMBVQ3mdJiGdOC1mjTfRtVG/a478bTpHehpav4bqvviQKeyFbuAgqa9zqmG7LLZB7+Ep4Agfrk7tENhPc/AiYrTpFxulc8uLPER5Ol0gsj25dlJOhhQZUaD/XK37ZbgEQ2drxk7Y5FCNH5qD5Oy6ar3kyt+2K5pBw8+cukaABdYi/Ii5rdjGhUaQvJ7K5DV1C5CEwBn5YPhg2wt1RtIWsBj8dIuDjXEv+D+Nup6L//+8XowauKhdobel3zVvpfKB93H/aM2c/1xhmcn5F8F/l3XHwzFBGprqmTLvz1ca8DUCogdzYfqTfRXM41zmmvGh/EuvQZ+R9J/hR+SevK9asNMr0ZmSBkkyJh7iz2gyUrPHJQ4oXZZWE5hpxk5qonS/tNM+YKj3BPcVSLUF/oWabmpvZe/1m6nMLbDgvaG7I/E5tHqJh3JZ8n7cPssaLcXgPd0=
-before_install:
-  - export SC_CLIENT_ID=$SOUNDCLOUD_CLIENT_ID soundcloud9000
+    secure: OcuG1eX7hI8VR3FYI3jEsr18/AcHpTyj3MZGvHaOCK8Z4ImVTYX5wIhwXOwOyi3ROfDw5CDn85WLbzPQxTWPPOCLhuGVraQXnYCuxrwSFnO0v9qeZvcrdUkKv2bKWJQ9VYdMUg3TTub8JhhtoWVSWiR5OiyvmVm8IrkeXocWDlFDqTdm17t/M9WY3IuWgYRBbDERNKkURm2nDv7KX3ZzSW+KpOQy29tGxAFYyEU/I1YJnXg1UcsvRs81D2VwhXw5matAx3YAgMPdrTlRNQx/tfs+99PWK83/5RM/LIr8d3YaISWpIyS5ywInFml8xAkqzw2kP39CYKzZF6IZ8hf1W5LzLG7OG2P2oiZgvXodyahcuiKaLdPBBf2OUVbmDGr/ZyGV3WEg+WJy7xTf/nhApFxKcKIzUETLGJ51BemF+cVQ9S0Ks43uWWgulLw09EcY3VUCOBX0hnLn42UIfFzwkHjZks2zXZ1szPxc0BNXaPTY6Ylcpw+gtq1d3WcYFujD5Idr8iL2jWbYIpZ+Z8HFHSXft6dbLmyKnCZCmrkF5GDCDchadf7lULYofSFsd3NYBNOirsa2oMCM53iy5Yog1DMWbHjVmcHLqS/XSvR/inQySW6soVWg9+dUo627L8K5OHH8ENkjlILv7BnXfty3yEjCpeNuqx/oNqXf1bFo25I=
 install:
   # - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install portaudio; fi
