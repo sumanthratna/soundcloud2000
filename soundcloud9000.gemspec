@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
   s.add_dependency "audite", "~> 0.4"
   s.add_dependency "curses", "~> 1.0"
 
-  s.add_development_dependency "bundler", "~> 1.17.1"
+  s.add_development_dependency "bundler", "~> 1.17", '>= 1.17.1'
   s.add_development_dependency "rake", "~> 10.5"
   s.add_development_dependency "mocha", "~> 1.1"
 
