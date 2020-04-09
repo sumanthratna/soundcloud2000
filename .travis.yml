@@ -39,9 +39,9 @@ install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then rvm get head; fi
   - if [[ "$TRAVIS_DIST" == "trusty" || "$TRAVIS_DIST" == "xenial" ]]; then sudo apt-get install software-properties-common ruby-switch && yes y | sudo apt-add-repository ppa:brightbox/ruby-ng && sudo apt-get update; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install portaudio19-dev libmpg123-dev libncurses-dev ruby2.5-dev; fi
-  - ruby -v
-  - ruby-switch --list
-  - sudo ruby-switch --set ruby2.5
+  - if [[ "$TRAVIS_DIST" == "trusty" || "$TRAVIS_DIST" == "xenial" ]]; then ruby -v; fi
+  - if [[ "$TRAVIS_DIST" == "trusty" || "$TRAVIS_DIST" == "xenial" ]]; then ruby-switch --list; fi
+  - if [[ "$TRAVIS_DIST" == "trusty" || "$TRAVIS_DIST" == "xenial" ]]; then sudo ruby-switch --set ruby2.5; fi
   - gem install bundler:1.17.1
 script:
   - gem build soundcloud9000.gemspec
