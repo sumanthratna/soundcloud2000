@@ -1,12 +1,12 @@
 language: ruby
 rvm:
-  - ruby-2.7.1
-  - ruby-2.6.6
-  - ruby-2.5.8
-  - ruby-2.4.10
-  - ruby-2.3.8
-  - ruby-2.2.10
-  - ruby-2.1.10
+  # - ruby-2.7.1
+  # - ruby-2.6.6
+  # - ruby-2.5.8
+  # - ruby-2.4.10
+  - ruby-2.3.0
+  # - ruby-2.2.10
+  # - ruby-2.1.10
   # - ruby-1.9.3-p551
   # - ruby-1.9.2
   # - ruby-2.0.0-p648
