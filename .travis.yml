@@ -17,11 +17,11 @@ jobs:
     - os: osx
     - os: linux
       dist: bionic
-    # - os: linux
-    #   dist: xenial
+    - os: linux
+      dist: xenial
     # ruby-dev on xenial and trusty is 2.3
-    # - os: linux
-    #   dist: trusty
+    - os: linux
+      dist: trusty
     # ruby-dev on trusty is 1.9.1 and curses requires ruby >= 2.1.0
     # - os: linux
     #   dist: precise
@@ -37,7 +37,8 @@ install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then yes y | gem uninstall audite --force; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then gem install --user audite -- --with-ldflags="-lmpg123"; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then rvm get head; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install portaudio19-dev libmpg123-dev libncurses-dev ruby-dev; fi
+  - if [[ "$TRAVIS_DIST" == "trusty" || "$TRAVIS_DIST" == "xenial" ]]; then sudo apt-add-repository ppa:brightbox/ruby-ng && sudo apt-get update; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install portaudio19-dev libmpg123-dev libncurses-dev ruby2.5-dev; fi
   - gem install bundler:1.17.1
 script:
   - gem build soundcloud9000.gemspec
