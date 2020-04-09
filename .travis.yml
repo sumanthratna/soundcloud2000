@@ -19,7 +19,7 @@ jobs:
     - os: linux
       dist: xenial
       before_install:
-        - yes y | rvm implode
+        - yes yes | rvm implode
         - gem uninstall rvm
         - sudo apt-get install software-properties-common && yes y | sudo apt-add-repository ppa:brightbox/ruby-ng && sudo apt-get update
         - sudo apt-get install portaudio19-dev libmpg123-dev libncurses-dev ruby2.5-dev
@@ -27,7 +27,7 @@ jobs:
     - os: linux
       dist: trusty
       before_install:
-        - yes y | rvm implode
+        - yes yes | rvm implode
         - gem uninstall rvm
         - sudo apt-get install software-properties-common && yes y | sudo apt-add-repository ppa:brightbox/ruby-ng && sudo apt-get update
         - sudo apt-get install portaudio19-dev libmpg123-dev libncurses-dev ruby2.5-dev
