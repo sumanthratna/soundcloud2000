@@ -18,7 +18,8 @@ The original software, soundcloud2000, is no longer maintained, and so I've pick
 
 ## Requirements
 
--   Ruby (`ruby 2.5.1` works best on Ubuntu 18.04)
+-   Ruby
+    - `ruby 2.5.1` on Ubuntu 18.04 or macOS works best
 -   Portaudio (19)
 -   Mpg123 (1.14)
 
