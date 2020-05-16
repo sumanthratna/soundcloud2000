@@ -37,7 +37,7 @@ jobs:
       before_install:
         - sudo apt-get purge ruby
         - sudo apt-get autoremove
-        - sudo apt-get install python-software-properties && yes y | sudo apt-add-repositry ppa:brightbox/ruby-ng && sudo apt-get update
+        - sudo apt-get install python-software-properties && yes y | sudo apt-add-repository ppa:brightbox/ruby-ng && sudo apt-get update
         - sudo apt-get install portaudio19-dev libmpg123-dev libncurses-dev ruby2.6-dev
 env:
   global:
