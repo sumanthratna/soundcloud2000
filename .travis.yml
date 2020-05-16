@@ -32,10 +32,13 @@ jobs:
         - sudo apt-get autoremove
         - sudo apt-get install software-properties-common && yes y | sudo apt-add-repository ppa:brightbox/ruby-ng && sudo apt-get update
         - sudo apt-get install portaudio19-dev libmpg123-dev libncurses-dev ruby2.6-dev
-    # curses requires ruby >= 2.1.0
-    # - os: linux
-    #   dist: precise
-    # sudo gem does not work on precise
+    - os: linux
+      dist: precise
+      before_install:
+        - sudo apt-get purge ruby
+        - sudo apt-get autoremove
+        - sudo apt-get install python-software-properties && yes y | sudo apt-add-repositry ppa:brightbox/ruby-ng && sudo apt-get update
+        - sudo apt-get install portaudio19-dev libmpg123-dev libncurses-dev ruby2.6-dev
 env:
   global:
     secure: H+9rrcXIzXWGKq9UXHaIkNN4mn3tev9jI4ihKdLRvr0Bs/NzfF6ae18yxYxf7hyiDZFtflEpPP3KhAqecrSyzYXKUVNpuHUUQChOOSFuKSFjryHVR3rtwXnzfXO5K/XkREfgMkBab8rpctPrP62KL+CqNQPxZdbOYBN5fndqdjiWHk5Gfdqsl5beQVo16GQ3iRaQBaXJasTOfLf0Pr1DDVVTuTSz1vn8IjbXaRnoWZ6QEdYvqWGpIDEMIOdWvUfLgoeaHq+HWjsfILJDxyk6RuYRtnEEHvi0vB8KazSO29dCHKRghJB00mBUtU/z9hVScE2J/8MPbi0HjH3Yvq9PZbQIQBCsQr+zOVF/R/EEk7NfAS8PU061fQBwOZ9zKkDLFARzrNpQXjUBucm1+HJiitjYOT+uQ+7nY1YUjqj4ez/ppmgPdziqbSAP98IED/Swb+35D4F1WQan0xQt+GfK5u0Hf0GIKymBjBUUYy2rSY0EKaT3iFXxC5qIH7aiavTqq6JnFzQttuW5CfS9GMDPn9+X2nqj/npSwjWSOKuzWbs12+Z6hMOrXcUhV6vme9ul/PiWsfhb97x8LTpsdnPh1ElLrl7gYHF56cIISknEGMDiYzLhA1frWavajIKMvgeOSksp+LBR59n5WkoBAUcL0aNr1yaERxMBfFFi3KqWACQ=
