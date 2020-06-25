@@ -17,8 +17,8 @@ Gem::Specification.new do |s|
   s.license       = 'MIT'
 
   s.bindir        = 'bin'
-  s.files         = `git ls-files`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
+  s.files         = `git ls-files -z`.split("\x0")
+  s.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   s.require_paths = ["lib"]
 
   s.add_dependency "json", "~> 1.8"
