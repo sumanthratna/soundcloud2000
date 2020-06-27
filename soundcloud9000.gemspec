@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
 
   s.bindir        = 'bin'
   s.files         = `git ls-files -z`.split("\x0")
-  s.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
+  s.executables   = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
   s.require_paths = ["lib"]
 
   s.add_dependency "json", "~> 1.8"

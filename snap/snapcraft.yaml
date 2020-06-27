@@ -1,20 +1,35 @@
-name: soundcloud9000
-base: core18
-version: '0.1.3+git'
-summary: The next generation SoundCloud client
-description: |
+name:               soundcloud9000
+base:               core18
+version:            '0.1.3+git'
+summary:            The next generation SoundCloud client
+description:        |
   A SoundCloud terminal client, without all the stupid CSS files.
 
-grade: stable
-confinement: strict
+grade:              stable
+confinement:        strict
 
 parts:
   soundcloud9000:
-    source: .
-    plugin: ruby
+    source:         .
+    plugin:         ruby
     # ruby-version: '2.6.6'
+    gems:
+      - rake
+      - bundler
     build-packages:
       - git
+      - portaudio19-dev
+      - libmpg123-dev
+      - libncurses-dev
+    stage-packages:
+      - libasound2
+      - libjack0
+      - libmpg123-0
+      - libportaudio2
+    override-build: |
+      snapcraftctl build
+      gem build soundcloud9000.gemspec
+      gem install soundcloud9000-*.gem --env-shebang
 apps:
   soundcloud9000:
-    command: ../project/bin/soundcloud9000
+    command:        ../project/bin/soundcloud9000
