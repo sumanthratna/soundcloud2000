@@ -11,34 +11,39 @@ jobs:
         - yes y | gem uninstall audite --force
         - gem install --user audite -- --with-ldflags="-lmpg123"
         - rvm get head
+        - brew install snapcraft
     - os: linux
       dist: bionic
       before_install:
         - sudo apt-get purge ruby
         - sudo apt-get autoremove
         - sudo apt-get install software-properties-common && yes y | sudo apt-add-repository ppa:brightbox/ruby-ng && sudo apt-get update
-        - sudo apt-get install portaudio19-dev libmpg123-dev libncurses-dev ruby2.6-dev
+        - sudo apt-get install portaudio19-dev mpg123 libmpg123-dev libncurses-dev ruby2.6-dev
+        - sudo apt-get install snapd snapcraft && sudo snap install snapcraft --classic
     - os: linux
       dist: xenial  # ruby-dev on xenial is 2.3
       before_install:
         - sudo apt-get purge ruby
         - sudo apt-get autoremove
         - sudo apt-get install software-properties-common && yes y | sudo apt-add-repository ppa:brightbox/ruby-ng && sudo apt-get update
-        - sudo apt-get install portaudio19-dev libmpg123-dev libncurses-dev ruby2.6-dev
+        - sudo apt-get install portaudio19-dev mpg123 libmpg123-dev libncurses-dev ruby2.6-dev
+        - sudo apt-get install snapd snapcraft && sudo snap install snapcraft --classic
     - os: linux
       dist: trusty  # ruby-dev on trusty is 1.9.1
       before_install:
         - sudo apt-get purge ruby
         - sudo apt-get autoremove
         - sudo apt-get install software-properties-common && yes y | sudo apt-add-repository ppa:brightbox/ruby-ng && sudo apt-get update
-        - sudo apt-get install portaudio19-dev libmpg123-dev libncurses-dev ruby2.6-dev
+        - sudo apt-get install portaudio19-dev mpg123 libmpg123-dev libncurses-dev ruby2.6-dev
+        - sudo apt-get install snapd snapcraft && sudo snap install snapcraft --classic
     - os: linux
       dist: precise
       before_install:
         - sudo apt-get purge ruby
         - sudo apt-get autoremove
         - sudo apt-get install python-software-properties && yes y | sudo apt-add-repository ppa:brightbox/ruby-ng && sudo apt-get update
-        - sudo apt-get install portaudio19-dev libmpg123-dev libncurses-dev ruby2.6-dev
+        - sudo apt-get install portaudio19-dev mpg123 libmpg123-dev libncurses-dev ruby2.6-dev
+        - sudo apt-get install snapd snapcraft && sudo snap install snapcraft --classic
   allow_failures:
   - os: linux
     dist: precise
@@ -50,7 +55,8 @@ install:
   - gem install bundler:2.1.4
 script:
   - yes y | gem uninstall soundcloud9000
-  - bundle _2.1.4_ install --path vendor/bundle
+  - bundle _2.1.4_ config set path 'vendor/bundle'
+  - bundle _2.1.4_ install
   - bundle _2.1.4_ exec rake install
   - bundle _2.1.4_ exec rake clobber
   - bundle _2.1.4_ exec rake install:local
