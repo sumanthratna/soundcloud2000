@@ -32,4 +32,4 @@ parts:
       gem install soundcloud9000-*.gem --env-shebang
 apps:
   soundcloud9000:
-    command:        ../project/bin/soundcloud9000
+    command:        soundcloud9000
