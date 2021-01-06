@@ -26,6 +26,8 @@ parts:
       - libjack0
       - libmpg123-0
       - libportaudio2
+    plugs:
+      - audio-playback
     override-build: |
       snapcraftctl build
       gem build soundcloud9000.gemspec
